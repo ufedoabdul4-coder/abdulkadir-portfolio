@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b10">
+  <meta name="description" content="Abdulkadir — independent software developer building thoughtful web applications, AI-powered tools, and mobile experiences.">
+  <title>Abdulkadir — Software Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#090b10;--panel:#10131b;--panel2:#151a24;--text:#f3f5f7;--muted:#9ba5b5;--line:rgba(255,255,255,.1);--accent:#b8f36b;--accent2:#8be4c1;--max:1160px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif;line-height:1.65;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;background:radial-gradient(ellipse at 12% 8%,rgba(184,243,107,.09),transparent 32%),radial-gradient(ellipse at 88% 38%,rgba(81,131,255,.09),transparent 35%),#090b10}
+    a{color:inherit;text-decoration:none}
+    button,a{-webkit-tap-highlight-color:transparent}
+    .grain{position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E")}
+    #particles{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:.68}
+    .wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
+    .nav-shell{position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(255,255,255,.07);background:rgba(9,11,16,.72);backdrop-filter:blur(18px)}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.04em}
+    .brand-mark{display:grid;place-items:center;width:35px;height:35px;border-radius:11px;background:var(--accent);color:#11170a;font-size:14px;font-weight:900}
+    .brand span:last-child{font-size:15px}
+    .nav-links{display:flex;align-items:center;gap:29px;color:#c1c7d1;font-size:12px}
+    .nav-links a{transition:color .2s}.nav-links a:hover{color:var(--accent)}
+    .nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--line);border-radius:999px;padding:12px 18px;font-size:12px;font-weight:800;transition:transform .25s,border-color .25s,background .25s}
+    .nav-cta{border-color:rgba(184,243,107,.45);color:var(--accent)}
+    .nav-cta:hover,.button:hover{transform:translateY(-3px);border-color:var(--accent)}
+    .hero{min-height:690px;display:grid;align-items:center;position:relative;padding:85px 0 90px}
+    .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:58px}
+    .eyebrow,.mono{font-family:"DM Mono",monospace;text-transform:uppercase;letter-spacing:.13em;font-size:10px;color:var(--accent)}
+    .eyebrow{display:flex;align-items:center;gap:11px;margin-bottom:25px}
+    .live-dot{width:7px;height:7px;background:var(--accent);border-radius:50%;box-shadow:0 0 16px var(--accent);animation:pulse 2s infinite}
+    @keyframes pulse{50%{opacity:.4;box-shadow:0 0 3px var(--accent)}}
+    h1{font-size:clamp(46px,6.4vw,82px);line-height:1.04;letter-spacing:-.075em;margin:0 0 25px;font-weight:800}
+    h1 .soft{color:#9da6b5} h1 .green{color:var(--accent)}
+    .hero-copy{font-size:15px;color:#aeb6c3;max-width:560px;line-height:1.9;margin:0 0 30px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .button.primary{background:var(--accent);color:#11170a;border-color:var(--accent)}
+    .button.secondary{background:rgba(255,255,255,.025);color:#e9edf3}
+    .button svg{width:15px;height:15px}
+    .hero-foot{display:flex;gap:25px;margin-top:47px;flex-wrap:wrap}
+    .micro-stat{border-left:1px solid var(--line);padding-left:14px}
+    .micro-stat strong{display:block;font-size:13px;letter-spacing:-.02em}
+    .micro-stat span{display:block;font-size:10px;color:var(--muted);margin-top:3px}
+    .visual{min-height:430px;position:relative;display:grid;place-items:center}
+    .orbit{position:absolute;border:1px solid rgba(184,243,107,.13);border-radius:50%;width:390px;height:390px;animation:spin 34s linear infinite}
+    .orbit:before,.orbit:after{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 20px var(--accent)}
+    .orbit:before{top:53px;left:45px}.orbit:after{bottom:55px;right:34px;background:#8be4c1;box-shadow:0 0 20px #8be4c1}
+    .orbit.two{width:300px;height:300px;border-color:rgba(139,228,193,.13);animation-direction:reverse;animation-duration:27s}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .profile-card{position:relative;z-index:1;width:min(330px,90%);padding:25px;border:1px solid rgba(255,255,255,.13);border-radius:22px;background:linear-gradient(145deg,rgba(28,34,46,.92),rgba(12,15,22,.9));box-shadow:0 30px 90px rgba(0,0,0,.4),inset 0 1px rgba(255,255,255,.06);transform:rotate(-3deg);animation:float 6s ease-in-out infinite}
+    @keyframes float{50%{transform:translateY(-10px) rotate(-1deg)}}
+    .card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:35px}
+    .window-dots{display:flex;gap:5px}.window-dots i{width:6px;height:6px;background:#4b5361;border-radius:50%}
+    .card-tag{font:9px "DM Mono",monospace;color:#8793a4}
+    .avatar{width:64px;height:64px;border-radius:20px;background:linear-gradient(140deg,#c8ff83,#7fd9b8);color:#10180c;display:grid;place-items:center;font-size:22px;font-weight:900;letter-spacing:-.08em;margin-bottom:17px}
+    .profile-card h3{font-size:22px;letter-spacing:-.05em;margin:0}
+    .profile-card p{font-size:11px;color:#9ea9b9;margin:5px 0 23px}
+    .code-line{display:flex;align-items:center;gap:10px;border-top:1px solid var(--line);padding-top:15px;font:10px "DM Mono",monospace;color:#c6cfdb}
+    .code-line span{color:var(--accent)}
+    .float-chip{position:absolute;z-index:2;border:1px solid rgba(255,255,255,.12);background:rgba(17,21,30,.9);backdrop-filter:blur(10px);padding:12px 15px;border-radius:13px;font-size:10px;box-shadow:0 15px 35px #0003}
+    .float-chip strong{display:block;font-size:11px;margin-bottom:3px}.float-chip span{color:#9ba5b5}
+    .chip-a{top:60px;right:0;animation:float 7s ease-in-out infinite}.chip-b{bottom:62px;left:-2px;animation:float 8s ease-in-out infinite reverse}
+    section{padding:105px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:38px}
+    .section-index{font:10px "DM Mono",monospace;color:var(--accent);letter-spacing:.13em;text-transform:uppercase;margin-bottom:13px}
+    h2{font-size:clamp(32px,4.2vw,49px);line-height:1.12;letter-spacing:-.065em;margin:0}
+    .section-note{max-width:330px;color:var(--muted);font-size:12px;line-height:1.8;margin:0}
+    .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}
+    .project{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,rgba(21,26,36,.95),rgba(13,16,23,.95));transition:transform .3s,border-color .3s}
+    .project:hover{transform:translateY(-5px);border-color:rgba(184,243,107,.42)}
+    .project[data-project-url]{cursor:pointer}.project[data-project-url]:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+    .project-art{height:220px;position:relative;overflow:hidden;border-bottom:1px solid var(--line);display:grid;place-items:center;background:radial-gradient(circle at 50% 20%,rgba(184,243,107,.12),transparent 50%),#10141d}
+    .project-art.blue{background:radial-gradient(circle at 50% 20%,rgba(103,145,255,.18),transparent 50%),#10141d}
+    .project-art.purple{background:radial-gradient(circle at 50% 20%,rgba(185,126,255,.15),transparent 50%),#10141d}
+    .project-art.teal{background:radial-gradient(circle at 50% 20%,rgba(91,223,190,.14),transparent 50%),#10141d}
+    .mock-window{width:78%;border:1px solid rgba(255,255,255,.17);border-radius:10px;background:#141a24;box-shadow:0 20px 45px #0005;transform:rotate(-2deg);transition:transform .4s}
+    .project:hover .mock-window{transform:rotate(0) scale(1.035)}
+    .mock-bar{height:24px;border-bottom:1px solid rgba(255,255,255,.09);display:flex;align-items:center;padding:0 9px;gap:4px}
+    .mock-bar i{width:4px;height:4px;border-radius:50%;background:#5e6877}
+    .mock-body{padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .mock-label{font:7px "DM Mono",monospace;color:var(--accent);margin-bottom:8px}
+    .mock-title{height:8px;width:90%;background:#dce3ec;border-radius:4px;margin-bottom:6px}
+    .mock-title.short{width:57%}
+    .mock-text{height:4px;width:80%;background:#556071;border-radius:4px;margin:5px 0}
+    .mock-panel{height:54px;border:1px solid #303949;border-radius:5px;background:linear-gradient(135deg,#1d2734,#131922);padding:8px}
+    .mock-number{font-size:13px;font-weight:800;color:var(--accent)}
+    .mock-list{display:flex;flex-direction:column;gap:6px}.mock-row{height:7px;background:#27303e;border-radius:4px}
+    .project-content{padding:22px 23px 23px}
+    .project-meta{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:11px}
+    .project-type{font:9px "DM Mono",monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
+    .project-number{font:10px "DM Mono",monospace;color:#687384}
+    .project h3{font-size:21px;letter-spacing:-.045em;margin:0 0 8px}
+    .project p{font-size:12px;line-height:1.8;color:var(--muted);margin:0 0 18px;max-width:470px}
+    .tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:21px}
+    .tags span{font-size:9px;color:#c0c8d4;border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:5px 8px}
+    .project-link{display:inline-flex;align-items:center;gap:8px;color:#f2f5f7;font-size:11px;font-weight:800}
+    .project-link span{color:var(--accent);transition:transform .2s}.project-link:hover span{transform:translate(3px,-3px)}
+    .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:start}
+    .about-intro{font-size:16px;line-height:1.9;color:#d1d7e0;margin:0 0 18px}
+    .about-copy{font-size:12px;line-height:1.95;color:var(--muted);margin:0 0 25px}
+    .principles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .principle{padding:17px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.02)}
+    .principle b{display:block;font-size:12px;margin:8px 0 4px}.principle p{font-size:10px;color:var(--muted);margin:0;line-height:1.7}
+    .principle .symbol{font-size:18px;color:var(--accent)}
+    .skill-groups{display:grid;gap:14px}
+    .skill-group{padding:21px 23px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.02)}
+    .skill-head{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:15px}
+    .skill-head strong{font-size:12px}.skill-head span{font:9px "DM Mono",monospace;color:#7f8a9b}
+    .skill-tags{display:flex;gap:8px;flex-wrap:wrap}
+    .skill-tags span{padding:7px 10px;border-radius:7px;background:#171d27;color:#c6cfdb;font-size:10px;border:1px solid rgba(255,255,255,.045)}
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .process-step{padding:20px 18px;border-top:1px solid rgba(184,243,107,.5);background:linear-gradient(180deg,rgba(184,243,107,.045),transparent);min-height:175px}
+    .process-step .num{font:10px "DM Mono",monospace;color:var(--accent)}
+    .process-step h3{font-size:14px;margin:19px 0 8px;letter-spacing:-.03em}
+    .process-step p{font-size:10px;color:var(--muted);line-height:1.8;margin:0}
+    .contact-box{position:relative;overflow:hidden;padding:clamp(28px,6vw,65px);border:1px solid rgba(184,243,107,.23);border-radius:25px;background:radial-gradient(ellipse at 90% 0%,rgba(184,243,107,.12),transparent 40%),linear-gradient(135deg,#151b23,#0e1118)}
+    .contact-box:after{content:"";position:absolute;width:270px;height:270px;border:1px solid rgba(184,243,107,.13);border-radius:50%;right:-100px;bottom:-150px;box-shadow:0 0 0 35px rgba(184,243,107,.025),0 0 0 70px rgba(184,243,107,.02)}
+    .contact-box h2{max-width:650px;margin:14px 0 18px}
+    .contact-box p{color:var(--muted);font-size:13px;max-width:520px;margin:0 0 25px}
+    .contact-actions{display:flex;gap:11px;flex-wrap:wrap;position:relative;z-index:1}
+    footer{padding:28px 0 34px;border-top:1px solid var(--line)}
+    .footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px;color:#8490a1;font-size:10px}
+    .footer-links{display:flex;gap:18px}.footer-links a:hover{color:var(--accent)}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .delay-1{transition-delay:.12s}.delay-2{transition-delay:.22s}.delay-3{transition-delay:.32s}
+    @media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:20px}.hero{padding:70px 0 40px}.visual{min-height:390px;max-width:520px;width:100%;margin:0 auto}.hero-foot{margin-top:35px}.about-grid{grid-template-columns:1fr;gap:35px}.process-grid{grid-template-columns:repeat(2,1fr)}.section-head{align-items:start;flex-direction:column;gap:14px}.section-note{max-width:500px}}
+    @media(max-width:600px){.wrap{width:min(var(--max),calc(100% - 30px))}nav{height:66px}.nav-links{gap:14px}.nav-links a:not(.nav-cta){display:none}.nav-cta{padding:10px 13px;font-size:10px}.hero{min-height:auto;padding:65px 0 45px}h1{font-size:clamp(45px,13vw,68px)}.hero-copy{font-size:13px}.visual{min-height:330px}.orbit{width:300px;height:300px}.orbit.two{width:230px;height:230px}.chip-a{right:-3px;top:25px}.chip-b{bottom:35px;left:0}.profile-card{width:290px;padding:21px}.hero-foot{gap:15px}.micro-stat{padding-left:10px}section{padding:75px 0}.project-grid{grid-template-columns:1fr}.project-art{height:195px}.process-grid{grid-template-columns:1fr 1fr;gap:8px}.process-step{padding:16px 13px;min-height:160px}.principles{gap:8px}.principle{padding:13px}.footer-row{align-items:flex-start;flex-direction:column}.footer-links{gap:15px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <canvas id="particles" aria-hidden="true"></canvas><div class="grain" aria-hidden="true"></div>
+  <div class="nav-shell"><nav class="wrap">
+    <a class="brand" href="#home" aria-label="Abdulkadir home"><span class="brand-mark">A.</span><span>abdulkadir<span style="color:var(--accent)">.</span></span></a>
+    <div class="nav-links"><a href="#work">Work</a><a href="#about">About</a><a href="#skills">Skills</a><a class="nav-cta" href="#contact">Let's talk <span>↗</span></a></div>
+  </nav></div>
+
+  <main>
+    <section class="hero wrap" id="home">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow"><span class="live-dot"></span> Independent developer · Available for opportunities</div>
+          <h1>Building digital<br><span class="soft">things that</span><br><span class="green">move people.</span></h1>
+          <p class="hero-copy">I'm Abdulkadir, a software developer focused on building useful web applications, thoughtful user experiences, and AI-powered tools. I turn complex ideas into products people can actually use.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#work">Explore my work <span>↘</span></a>
+            <a class="button secondary" href="#contact">Get in touch <span>↗</span></a>
+          </div>
+          <div class="hero-foot">
+            <div class="micro-stat"><strong>Full-stack</strong><span>Web development</span></div>
+            <div class="micro-stat"><strong>AI-powered</strong><span>Product thinking</span></div>
+            <div class="micro-stat"><strong>Mobile</strong><span>App experiences</span></div>
+          </div>
+        </div>
+        <div class="visual" aria-label="Animated developer profile illustration">
+          <div class="orbit"></div><div class="orbit two"></div>
+          <div class="float-chip chip-a"><strong>Building with purpose</strong><span>Code · Craft · Curiosity</span></div>
+          <div class="profile-card">
+            <div class="card-top"><div class="window-dots"><i></i><i></i><i></i></div><div class="card-tag">DEV_PROFILE / 001</div></div>
+            <div class="avatar">AK</div>
+            <h3>Abdulkadir</h3><p>Software Developer · Problem Solver</p>
+            <div class="code-line"><span>const</span> approach = "build, learn, improve";</div>
+          </div>
+          <div class="float-chip chip-b"><strong><span style="color:var(--accent)">✳</span> Curious by default</strong><span>Always learning something new</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><div class="section-index">01 / Selected work</div><h2>Projects with a purpose.</h2></div>
+          <p class="section-note">A selection of live websites and software projects across AI productivity, political mobilization, e-commerce, education, and machine learning.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project reveal" data-project-url="https://quotegen1-ai.netlify.app/" tabindex="0" role="link" aria-label="Open QuoteGen AI">
+            <div class="project-art">
+              <div class="mock-window"><div class="mock-bar"><i></i><i></i><i></i></div><div class="mock-body"><div><div class="mock-label">QUOTATION STUDIO</div><div class="mock-title"></div><div class="mock-title short"></div><div class="mock-text"></div><div class="mock-text"></div></div><div class="mock-panel"><div class="mock-label">PROPOSAL TOTAL</div><div class="mock-number">₦ 950,000</div><div class="mock-text"></div></div></div></div>
+            </div>
+            <div class="project-content"><div class="project-meta"><span class="project-type">AI · SaaS · Productivity</span><span class="project-number">01</span></div><h3>QuoteGen AI</h3><p>An AI-assisted quotation and proposal generator designed to help service businesses turn job details into clear, professional client documents.</p><div class="tags"><span>AI integration</span><span>Web application</span><span>Document workflows</span></div><a class="project-link" href="https://quotegen1-ai.netlify.app/" target="_blank" rel="noreferrer">Visit live website <span>↗</span></a></div>
+          </article>
+          <article class="project reveal delay-1" data-project-url="https://github.com/ufedoabdul4-coder/Cloud-stores" tabindex="0" role="link" aria-label="Open Cloud Stores repository">
+            <div class="project-art blue">
+              <div class="mock-window"><div class="mock-bar"><i></i><i></i><i></i></div><div class="mock-body"><div><div class="mock-label" style="color:#8eb2ff">CLOUD STORES</div><div class="mock-title"></div><div class="mock-text"></div><div class="mock-text"></div></div><div class="mock-list"><div class="mock-panel"><div class="mock-label" style="color:#8eb2ff">PRODUCT</div><div class="mock-title short"></div></div><div class="mock-panel"><div class="mock-label" style="color:#8eb2ff">CHECKOUT</div><div class="mock-text"></div></div></div></div></div>
+            </div>
+            <div class="project-content"><div class="project-meta"><span class="project-type">E-commerce · Web</span><span class="project-number">02</span></div><h3>Cloud Stores</h3><p>An appliance e-commerce website with product browsing, a Supabase-connected administration workflow, and a practical customer shopping experience.</p><div class="tags"><span>E-commerce</span><span>Supabase</span><span>Responsive UI</span></div><a class="project-link" href="https://github.com/ufedoabdul4-coder/Cloud-stores" target="_blank" rel="noreferrer">View source on GitHub <span>↗</span></a></div>
+          </article>
+          <article class="project reveal" data-project-url="https://apcgrassrootsmobilization.com/" tabindex="0" role="link" aria-label="Open APC Grassroots Mobilization website">
+            <div class="project-art teal">
+              <div class="mock-window"><div class="mock-bar"><i></i><i></i><i></i></div><div class="mock-body"><div><div class="mock-label" style="color:#8be4c1">COMMUNITY NETWORK</div><div class="mock-title"></div><div class="mock-text"></div><div class="mock-text"></div><div class="mock-text" style="width:55%"></div></div><div class="mock-list"><div class="mock-panel"><div class="mock-label" style="color:#8be4c1">MEMBERS</div><div class="mock-number" style="color:#8be4c1">Manage</div></div><div class="mock-panel"><div class="mock-label" style="color:#8be4c1">ACTIVITY</div><div class="mock-text"></div><div class="mock-text"></div></div></div></div></div>
+            </div>
+            <div class="project-content"><div class="project-meta"><span class="project-type">Web platform · Admin</span><span class="project-number">03</span></div><h3>APC Grassroots Mobilization</h3><p>A nationwide digital grassroots mobilization platform built for the All Progressives Congress (APC) and the Renewed Hope 2027 initiative. Developed to support structured party and campaign coordination, with administrative tools for managing leaders, members, events, diaspora engagement, and uploaded records. Built with a focus on helping organize grassroots activity across a large political network.</p><div class="tags"><span>React</span><span>Supabase</span><span>PostgreSQL</span><span>Admin dashboard</span><span>Political mobilization</span></div><a class="project-link" href="https://apcgrassrootsmobilization.com/" target="_blank" rel="noreferrer">Visit live website <span>↗</span></a></div>
+          </article>
+          <article class="project reveal" data-project-url="https://github.com/ufedoabdul4-coder/Sentiment-Analysis" tabindex="0" role="link" aria-label="Open Sentiment Analysis repository">
+            <div class="project-art blue">
+              <div class="mock-window"><div class="mock-bar"><i></i><i></i><i></i></div><div class="mock-body">
+                <div><div class="mock-label" style="color:#8eb2ff">SENTIMENT CLASSIFIER</div><div class="mock-title"></div><div class="mock-text"></div><div class="mock-text" style="width:66%"></div><div class="mock-panel" style="margin-top:12px"><div class="mock-label" style="color:#8eb2ff">MODEL</div><div class="mock-number" style="color:#8eb2ff">BERT</div></div></div>
+                <div><div class="mock-label" style="color:#8eb2ff">TEXT ANALYSIS</div><div style="height:8px;border-radius:5px;background:#283447;margin:10px 0;overflow:hidden"><div style="height:100%;width:82%;background:#8be4c1;border-radius:5px"></div></div><div class="mock-text" style="width:72%"></div><div style="height:8px;border-radius:5px;background:#283447;margin:10px 0;overflow:hidden"><div style="height:100%;width:18%;background:#b8f36b;border-radius:5px"></div></div><div class="mock-text" style="width:54%"></div></div>
+              </div></div>
+            </div>
+            <div class="project-content"><div class="project-meta"><span class="project-type">Machine learning · NLP</span><span class="project-number">04</span></div><h3>Sentiment Analysis</h3><p>A BERT-based text classification project exploring natural language processing, including text preprocessing, model fine-tuning with Hugging Face Transformers, and evaluation.</p><div class="tags"><span>Python</span><span>BERT</span><span>Hugging Face</span><span>NLP</span></div><a class="project-link" href="https://github.com/ufedoabdul4-coder/Sentiment-Analysis" target="_blank" rel="noreferrer">View source on GitHub <span>↗</span></a></div>
+          </article>
+          <article class="project reveal" data-project-url="https://stpaulangsoba.org/" tabindex="0" role="link" aria-label="Open St. Paul Anglican Grammar School Old Boys Association">
+            <div class="project-art teal">
+              <div class="mock-window"><div class="mock-bar"><i></i><i></i><i></i></div><div class="mock-body"><div><div class="mock-label">ST PAUL ANGS OBA</div><div class="mock-title"></div><div class="mock-title short"></div><div class="mock-text"></div><div class="mock-text"></div></div><div class="mock-list"><div class="mock-panel"><div class="mock-label">RESPONSIVE</div><div class="mock-number">Live</div></div><div class="mock-panel"><div class="mock-label">CONTENT</div><div class="mock-text"></div><div class="mock-text"></div></div></div></div></div>
+            </div>
+            <div class="project-content"><div class="project-meta"><span class="project-type">WordPress · Education · Community</span><span class="project-number">05</span></div><h3>St. Paul Anglican Grammar School Old Boys Association</h3><p>Built and customized a responsive WordPress website for the Anglican Grammar School Old Boys Association, incorporating SEO optimization and integrated content management features for easy updates.</p><div class="tags"><span>WordPress</span><span>Responsive design</span><span>SEO</span><span>Content management</span></div><a class="project-link" href="https://stpaulangsoba.org/" target="_blank" rel="noreferrer">Visit live website <span>↗</span></a></div>
+          </article>
+          <article class="project reveal" data-project-url="https://www.techxpertacademy.com/" tabindex="0" role="link" aria-label="Open TechXpert International Academy">
+            <div class="project-art blue">
+              <div class="mock-window"><div class="mock-bar"><i></i><i></i><i></i></div><div class="mock-body"><div><div class="mock-label">TECHXPERT ACADEMY</div><div class="mock-title"></div><div class="mock-title short"></div><div class="mock-text"></div><div class="mock-text"></div></div><div class="mock-list"><div class="mock-panel"><div class="mock-label">RESPONSIVE</div><div class="mock-number">Live</div></div><div class="mock-panel"><div class="mock-label">CONTENT</div><div class="mock-text"></div><div class="mock-text"></div></div></div></div></div>
+            </div>
+            <div class="project-content"><div class="project-meta"><span class="project-type">Education · Institutional website</span><span class="project-number">06</span></div><h3>TechXpert Int'l Academy</h3><p>A school website for TechXpert International Academy, presenting the institution, its learning environment, facilities, and key information for families and the wider school community.</p><div class="tags"><span>Education website</span><span>Responsive design</span><span>School information</span></div><a class="project-link" href="https://www.techxpertacademy.com/" target="_blank" rel="noreferrer">Visit live website <span>↗</span></a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap about-grid">
+        <div class="reveal"><div class="section-index">02 / A little about me</div><h2>Good software starts with understanding the problem.</h2></div>
+        <div class="reveal delay-1"><p class="about-intro">I enjoy taking an idea from an early sketch to a working digital product — and learning whatever is needed along the way.</p><p class="about-copy">My work spans front-end experiences, backend integrations, databases, and mobile app development. I care about making software that feels clear to use, works reliably, and solves a real need. I also use modern AI tools to speed up development while staying responsible for the quality of the result.</p>
+          <div class="principles">
+            <div class="principle"><span class="symbol">↗</span><b>Practical by design</b><p>Build around real user needs, not unnecessary complexity.</p></div>
+            <div class="principle"><span class="symbol">⌘</span><b>End-to-end thinking</b><p>Consider the interface, data, and experience together.</p></div>
+            <div class="principle"><span class="symbol">✳</span><b>Always improving</b><p>Learn new tools, take feedback, and refine the work.</p></div>
+            <div class="principle"><span class="symbol">◎</span><b>Team-minded</b><p>Communicate clearly and stay open to direction.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="section-index">03 / Tools of the trade</div><h2>What I work with.</h2></div><p class="section-note">A flexible toolkit for building across the interface, application logic, data layer, and deployment workflow.</p></div>
+        <div class="skill-groups">
+          <div class="skill-group reveal"><div class="skill-head"><strong>Frontend development</strong><span>01 — INTERFACES</span></div><div class="skill-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>TypeScript</span><span>React</span><span>Next.js</span><span>Tailwind CSS</span></div></div>
+          <div class="skill-group reveal delay-1"><div class="skill-head"><strong>Backend & data</strong><span>02 — SYSTEMS</span></div><div class="skill-tags"><span>Python</span><span>Node.js</span><span>Supabase</span><span>PostgreSQL</span><span>REST APIs</span><span>Authentication</span></div></div>
+          <div class="skill-group reveal"><div class="skill-head"><strong>Mobile & product</strong><span>03 — EXPERIENCES</span></div><div class="skill-tags"><span>Flutter</span><span>React Native</span><span>Responsive design</span><span>UX-minded development</span><span>AI integrations</span></div></div>
+          <div class="skill-group reveal delay-1"><div class="skill-head"><strong>Workflow & delivery</strong><span>04 — SHIPPING</span></div><div class="skill-tags"><span>Git</span><span>GitHub</span><span>Deployment</span><span>Debugging</span><span>AI-assisted development</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="section-index">04 / How I work</div><h2>From idea to useful.</h2></div><p class="section-note">A clear, collaborative process keeps the work focused and makes progress easier to see.</p></div>
+        <div class="process-grid">
+          <div class="process-step reveal"><span class="num">STEP 01</span><h3>Understand</h3><p>Clarify the problem, who it serves, and what success should look like.</p></div>
+          <div class="process-step reveal delay-1"><span class="num">STEP 02</span><h3>Plan the experience</h3><p>Shape the main flows, content, structure, and technical approach.</p></div>
+          <div class="process-step reveal delay-2"><span class="num">STEP 03</span><h3>Build & refine</h3><p>Develop in practical steps, test the details, and improve from feedback.</p></div>
+          <div class="process-step reveal delay-3"><span class="num">STEP 04</span><h3>Deliver</h3><p>Prepare the product for use, deployment, and future improvements.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap"><div class="contact-box reveal">
+        <div class="section-index">05 / Have something in mind?</div>
+        <h2>Let's build something that matters.</h2>
+        <p>Have a project, a role, or an idea you want to bring to life? I'd be glad to hear what you're working on.</p>
+        <div class="contact-actions">
+          <a class="button primary" href="mailto:ufedoabdul4@gmail.com">Email me <span>↗</span></a>
+          <a class="button secondary" href="https://github.com/ufedoabdul4-coder" target="_blank" rel="noreferrer">GitHub profile <span>↗</span></a>
+          <button class="button secondary" id="copy-email" type="button">Copy email <span>⧉</span></button>
+        </div>
+        <p id="copy-status" aria-live="polite" style="font-size:10px;margin:13px 0 0;min-height:16px"></p>
+      </div></div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-row"><span>© <span id="year"></span> Abdulkadir. Built with curiosity and care.</span><div class="footer-links"><a href="#home">Back to top ↑</a><a href="https://github.com/ufedoabdul4-coder" target="_blank" rel="noreferrer">GitHub ↗</a></div></div></footer>
+  <script>
+    // Lightweight ambient particles; pauses when the tab is hidden.
+    (() => {
+      const canvas = document.getElementById('particles');
+      const ctx = canvas.getContext('2d');
+      let w=0,h=0,points=[],raf=0;
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function resize(){
+        const dpr=Math.min(window.devicePixelRatio||1,2);
+        w=window.innerWidth;h=window.innerHeight;
+        canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+'px';canvas.style.height=h+'px';
+        ctx.setTransform(dpr,0,0,dpr,0,0);
+        const count=Math.min(65,Math.floor(w/19));
+        points=Array.from({length:count},()=>({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.22,vy:(Math.random()-.5)*.22,r:Math.random()*1.4+.4}));
+      }
+      function draw(){
+        ctx.clearRect(0,0,w,h);
+        for(let i=0;i<points.length;i++){
+          const p=points[i];
+          if(!reduced){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;}
+          ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(184,243,107,.52)';ctx.fill();
+          for(let j=i+1;j<points.length;j++){
+            const q=points[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);
+            if(d<105){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle=`rgba(184,243,107,${(1-d/105)*.095})`;ctx.lineWidth=.7;ctx.stroke();}
+          }
+        }
+        if(!reduced&&!document.hidden)raf=requestAnimationFrame(draw);
+      }
+      function start(){cancelAnimationFrame(raf);draw()}
+      window.addEventListener('resize',()=>{resize();start()});
+      document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(raf);else start()});
+      resize();start();
+    })();
+    // Reveal sections as they enter the viewport.
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);} });
+    }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.getElementById('year').textContent=new Date().getFullYear();
+    document.getElementById('copy-email').addEventListener('click', async () => {
+      const status=document.getElementById('copy-status');
+      try { await navigator.clipboard.writeText('ufedoabdul4@gmail.com'); status.textContent='Email copied — ufedoabdul4@gmail.com'; }
+      catch { status.textContent='Email: ufedoabdul4@gmail.com'; }
+    });
+  </script>
+
+    document.querySelectorAll('.project[data-project-url]').forEach(card => {
+      card.addEventListener('click', event => {
+        if (event.target.closest('a')) return;
+        window.open(card.dataset.projectUrl, '_blank', 'noopener,noreferrer');
+      });
+      card.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); window.open(card.dataset.projectUrl, '_blank', 'noopener,noreferrer'); }
+      });
+    });
+  </body>
+</html>
