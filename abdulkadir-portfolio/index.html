@@ -65,7 +65,7 @@
     .code-line span{color:var(--accent)}
     .float-chip{position:absolute;z-index:2;border:1px solid rgba(255,255,255,.12);background:rgba(17,21,30,.9);backdrop-filter:blur(10px);padding:12px 15px;border-radius:13px;font-size:10px;box-shadow:0 15px 35px #0003}
     .float-chip strong{display:block;font-size:11px;margin-bottom:3px}.float-chip span{color:#9ba5b5}
-    .chip-a{top:60px;right:0;animation:float 7s ease-in-out infinite}.chip-b{bottom:62px;left:-2px;animation:float 8s ease-in-out infinite reverse}
+    .chip-a{top:24px;right:-8px;animation:float 7s ease-in-out infinite}.chip-b{bottom:18px;left:-8px;animation:float 8s ease-in-out infinite reverse}
     section{padding:105px 0}
     .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:38px}
     .section-index{font:10px "DM Mono",monospace;color:var(--accent);letter-spacing:.13em;text-transform:uppercase;margin-bottom:13px}
@@ -131,6 +131,7 @@
     .reveal.visible{opacity:1;transform:translateY(0)}
     .delay-1{transition-delay:.12s}.delay-2{transition-delay:.22s}.delay-3{transition-delay:.32s}
     @media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:20px}.hero{padding:70px 0 40px}.visual{min-height:390px;max-width:520px;width:100%;margin:0 auto}.hero-foot{margin-top:35px}.about-grid{grid-template-columns:1fr;gap:35px}.process-grid{grid-template-columns:repeat(2,1fr)}.section-head{align-items:start;flex-direction:column;gap:14px}.section-note{max-width:500px}}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:24px}.hero{padding-top:60px}.visual{min-height:390px;max-width:560px;width:100%;margin:0 auto}.chip-a{right:0;top:12px}.chip-b{left:0;bottom:12px}}
     @media(max-width:600px){.wrap{width:min(var(--max),calc(100% - 30px))}nav{height:66px}.nav-links{gap:14px}.nav-links a:not(.nav-cta){display:none}.nav-cta{padding:10px 13px;font-size:10px}.hero{min-height:auto;padding:65px 0 45px}h1{font-size:clamp(45px,13vw,68px)}.hero-copy{font-size:13px}.visual{min-height:330px}.orbit{width:300px;height:300px}.orbit.two{width:230px;height:230px}.chip-a{right:-3px;top:25px}.chip-b{bottom:35px;left:0}.profile-card{width:290px;padding:21px}.hero-foot{gap:15px}.micro-stat{padding-left:10px}section{padding:75px 0}.project-grid{grid-template-columns:1fr}.project-art{height:195px}.process-grid{grid-template-columns:1fr 1fr;gap:8px}.process-step{padding:16px 13px;min-height:160px}.principles{gap:8px}.principle{padding:13px}.footer-row{align-items:flex-start;flex-direction:column}.footer-links{gap:15px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
   </style>
@@ -321,15 +322,19 @@
       catch { status.textContent='Email: ufedoabdul4@gmail.com'; }
     });
   </script>
-
+    // Keep the whole project card clickable while preserving each explicit link.
     document.querySelectorAll('.project[data-project-url]').forEach(card => {
       card.addEventListener('click', event => {
         if (event.target.closest('a')) return;
         window.open(card.dataset.projectUrl, '_blank', 'noopener,noreferrer');
       });
       card.addEventListener('keydown', event => {
-        if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); window.open(card.dataset.projectUrl, '_blank', 'noopener,noreferrer'); }
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          window.open(card.dataset.projectUrl, '_blank', 'noopener,noreferrer');
+        }
       });
     });
+  </script>
   </body>
 </html>
